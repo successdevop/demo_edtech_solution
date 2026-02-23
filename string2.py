@@ -35,7 +35,18 @@ print(parrot[6:] + parrot[:6])
 print(parrot[:])
 print()
 print("===Slicing with negative numbers===")
-letters = "abcdefghijklmnopqrstuvwxyz"
+# letters = "abcdefghijklmnopqrstuvwxyz"
 
 print(parrot[-4:-1])
 print(parrot[-14:-8])
+print("""===================""")
+parrot = "Norwegian Blue"
+print(parrot[0:6:2])
+print(parrot[0:6:3])
+print("""===================""")
+numbers = "9,223;372:036 854,775;807"
+seperators = numbers[1::4]
+print(seperators)
+values = "".join(char if char not in seperators else " " for char in numbers).split()
+print(values)
+print([int(val) for val in values])
