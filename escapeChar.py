@@ -25,3 +25,14 @@ print(joiningSplittedWord)
 
 print("C:\\Users\\Success\\notes.txt")
 print(r"C:\Users\Success\notes.txt")
+print()
+
+age = 24
+print(age)
+print(type(splitString))
+print(type(age))
+
+age = "2 years old"
+print(age)
+print(type(age))
+
