@@ -16,5 +16,19 @@ print(value)
 newValue = [int(val) for val in value]
 print(newValue)
 print(sum(newValue))
+print("="*50)
 
+quote = """
+Alright, but apart from the Sanitation, the Medicine, Education, Wine,
+Public Order, Irrigation, Roads, the Fresh-Water System,
+and Public Health, what have the Romans ever done for us?
+"""
 
+capitalLetter = ""
+for letter in quote:
+    if not letter.isupper():
+        continue
+    else:
+        capitalLetter += letter
+
+print(capitalLetter)

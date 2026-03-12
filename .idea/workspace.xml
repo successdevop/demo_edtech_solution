@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0cff56aa-d67f-4cc1-bf3c-6aaa60b36002" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forLoop.py" beforeDir="false" afterPath="$PROJECT_DIR$/forLoop.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +17,7 @@
   "keyToString": {
     "Python.blocks.executor": "Debug",
     "Python.conditions.executor": "Run",
-    "Python.forLoop.executor": "Debug",
+    "Python.forLoop.executor": "Run",
     "Python.guessingGame.executor": "Run",
     "Python.truefalse.executor": "Run",
     "git-widget-placeholder": "controlFlowAndTechnies"
