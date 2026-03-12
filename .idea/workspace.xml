@@ -16,6 +16,7 @@
   "keyToString": {
     "Python.blocks.executor": "Debug",
     "Python.conditions.executor": "Run",
+    "Python.forLoop.executor": "Debug",
     "Python.guessingGame.executor": "Run",
     "Python.truefalse.executor": "Run",
     "git-widget-placeholder": "controlFlowAndTechnies"
@@ -23,5 +24,16 @@
 }]]></component>
   <component name="TaskManager">
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
