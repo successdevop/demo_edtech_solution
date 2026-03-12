@@ -17,6 +17,7 @@
     "Python.blocks.executor": "Debug",
     "Python.conditions.executor": "Run",
     "Python.guessingGame.executor": "Run",
+    "Python.truefalse.executor": "Run",
     "git-widget-placeholder": "controlFlowAndTechnies"
   }
 }]]></component>
