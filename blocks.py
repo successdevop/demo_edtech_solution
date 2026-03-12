@@ -15,7 +15,7 @@ age = int(input("How old are you {} ".format(name)))
 
 if age < 18:
     print("You are not eligible to vote {}, please come back in {} years time".format(name, 18 - age))
-elif age == 80:
+elif age == 800:
     print("You are to old to vote, please pray for the voting process")
 else:
     print("You are eligible to vote {}".format(name))
