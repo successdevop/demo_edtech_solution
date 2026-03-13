@@ -12,10 +12,18 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.blocks.executor": "Debug",
     "Python.conditions.executor": "Run",
+    "Python.excersice.executor": "Run",
     "Python.forLoop.executor": "Run",
     "Python.guessingGame.executor": "Run",
     "Python.nestedLoop.executor": "Debug",
@@ -36,6 +44,11 @@
           <url>file://$PROJECT_DIR$/nestedLoop.py</url>
           <line>7</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/excersice.py</url>
+          <line>65</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
