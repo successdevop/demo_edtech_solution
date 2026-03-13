@@ -20,6 +20,7 @@
     "Python.guessingGame.executor": "Run",
     "Python.nestedLoop.executor": "Debug",
     "Python.range.executor": "Run",
+    "Python.searching.executor": "Run",
     "Python.truefalse.executor": "Run",
     "git-widget-placeholder": "controlFlowAndTechnies"
   }
