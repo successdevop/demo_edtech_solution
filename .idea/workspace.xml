@@ -23,6 +23,7 @@
   "keyToString": {
     "Python.blocks.executor": "Debug",
     "Python.conditions.executor": "Run",
+    "Python.contrive.executor": "Run",
     "Python.excersice.executor": "Run",
     "Python.forLoop.executor": "Run",
     "Python.guessingGame.executor": "Run",
@@ -50,6 +51,11 @@
           <url>file://$PROJECT_DIR$/excersice.py</url>
           <line>65</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/contrive.py</url>
+          <line>3</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
