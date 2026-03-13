@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0cff56aa-d67f-4cc1-bf3c-6aaa60b36002" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/range.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +18,7 @@
     "Python.conditions.executor": "Run",
     "Python.forLoop.executor": "Run",
     "Python.guessingGame.executor": "Run",
+    "Python.nestedLoop.executor": "Debug",
     "Python.range.executor": "Run",
     "Python.truefalse.executor": "Run",
     "git-widget-placeholder": "controlFlowAndTechnies"
@@ -29,6 +29,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/nestedLoop.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
