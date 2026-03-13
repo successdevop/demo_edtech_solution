@@ -22,6 +22,7 @@
     "Python.range.executor": "Run",
     "Python.searching.executor": "Run",
     "Python.truefalse.executor": "Run",
+    "Python.whileLoop.executor": "Run",
     "git-widget-placeholder": "controlFlowAndTechnies"
   }
 }]]></component>
