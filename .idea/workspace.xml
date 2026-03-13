@@ -26,6 +26,7 @@
     "Python.excersice.executor": "Run",
     "Python.forLoop.executor": "Run",
     "Python.guessingGame.executor": "Run",
+    "Python.high_low.executor": "Run",
     "Python.nestedLoop.executor": "Debug",
     "Python.range.executor": "Run",
     "Python.searching.executor": "Run",
