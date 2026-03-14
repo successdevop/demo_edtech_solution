@@ -32,25 +32,26 @@ available_parts = ["to finish", "computer", "monitor", "keyboard", "mouse", "mou
 current_choice = "-"
 computer_parts = []
 
-while current_choice != 0:
+while current_choice != "0":
 
     if current_choice.isnumeric():
         index = int(current_choice)
-        part = available_parts[index]
+        if index < len(available_parts):
+            part = available_parts[index]
 
-        if part in computer_parts:
-            computer_parts.remove(part)
-            print(computer_parts)
-            print("+="*25)
-        else:
-            if part not in computer_parts:
-                computer_parts.append(part)
+            if part in computer_parts:
+                computer_parts.remove(part)
                 print(computer_parts)
                 print("+="*25)
+            else:
+                if part not in computer_parts:
+                    computer_parts.append(part)
+                    print(computer_parts)
+                    print("+="*25)
 
     print("Please add only option from the list below: ")
     for val in range(1, len(available_parts)):
         print(f"{val}. {available_parts[val]}")
-    print(f"{available_parts.index("to finish")}. {available_parts[0]}")
+    print(f"{available_parts.index("to finish")}. exit")
 
-    current_choice = int(input())
+    current_choice = input()
