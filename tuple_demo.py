@@ -52,7 +52,8 @@ while True:
         if 0 <= value1 < len(albums[value][3]):
             print("Playing {}".format(albums[value][3][value1][1]))
             print("="*50)
-
+    else:
+        break
 
 
 

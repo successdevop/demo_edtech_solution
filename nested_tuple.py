@@ -37,9 +37,9 @@ albums = [
      ]
      ),
 ]
-
-for num, val in albums[0][3]:
-    print(val)
+#
+# for num, val in albums[0][3]:
+#     print(val)
 #
 # song = albums[1][3][5][1]
 # print(song)
