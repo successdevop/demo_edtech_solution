@@ -2,6 +2,10 @@ import random
 
 
 def get_integer(prompt):
+    """
+    this function would continue loping and prompting the user until a valid 'int' is entered
+    The function returns an int from the user input
+    """
     while True:
         temp = input(prompt)
         if temp.isnumeric():
