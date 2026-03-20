@@ -1,6 +1,0 @@
-print("Hello Python World.")
-print("We are about to start a journey of greatness")
-print(2 + 1)
-print(50 + 23)
-print()
-print("Let start", "our journey of", "learning Python", 3, "today.")
