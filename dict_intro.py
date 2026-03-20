@@ -14,6 +14,15 @@ vehicles["star fighter"] = "Lockheed F104"
 vehicles["learjet"] = "Bombardier learjet"
 vehicles["toy"] = "glider"
 vehicles['virago'] = "Innoson iv50"
+
+# del vehicles["success"]
+result = vehicles.pop("success", "Does not exist")
+print(result)
+plane = vehicles.pop('fiesta')
+print(plane)
+bike = vehicles.pop("jimny", "check again")
+print(bike)
+print()
 print(vehicles)
 
 # for key, value in vehicles.items():
