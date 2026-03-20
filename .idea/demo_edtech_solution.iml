@@ -5,10 +5,20 @@
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
     </content>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <orderEntry type="jdk" jdkName="Python 3.12 (demo_edtech_solution)" jdkType="Python SDK" />
 =======
     <orderEntry type="jdk" jdkName="Python 3.12 (classes_oop)" jdkType="Python SDK" />
 >>>>>>> origin/list_tuples
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+=======
+    <orderEntry type="jdk" jdkName="Python 3.12 (demo_edtech_solution)" jdkType="Python SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="PyDocumentationSettings">
+    <option name="format" value="PLAIN" />
+    <option name="myDocStringFormat" value="Plain" />
+  </component>
+>>>>>>> functions
 </module>

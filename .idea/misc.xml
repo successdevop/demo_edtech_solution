@@ -2,6 +2,7 @@
 <project version="4">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   <component name="Black">
     <option name="sdkName" value="Python 3.12 (demo_edtech_solution)" />
@@ -14,4 +15,10 @@
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (classes_oop)" project-jdk-type="Python SDK" />
 >>>>>>> origin/list_tuples
+=======
+  <component name="Black">
+    <option name="sdkName" value="Python 3.12 (demo_Edtech_solution)" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (demo_edtech_solution)" project-jdk-type="Python SDK" />
+>>>>>>> functions
 </project>
