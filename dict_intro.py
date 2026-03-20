@@ -9,9 +9,22 @@ vehicles = {
     'fiesta': 'Ford Fiesta Ghia 1.4',
 }
 
-my_car = vehicles['dream']
-print(my_car)
-commuter = vehicles['virago']
-print(commuter)
-learner = vehicles.get("er5")
-print(learner)
+
+vehicles["star fighter"] = "Lockheed F104"
+vehicles["learjet"] = "Bombardier learjet"
+vehicles["toy"] = "glider"
+vehicles['virago'] = "Innoson iv50"
+print(vehicles)
+
+# for key, value in vehicles.items():
+#     print("{}: {}".format(key, value))
+
+# for key in vehicles:
+#     print(f"{key}: {vehicles[key]}")
+
+# my_car = vehicles['dream']
+# print(my_car)
+# commuter = vehicles['virago']
+# print(commuter)
+# learner = vehicles.get("er5")
+# print(learner)
