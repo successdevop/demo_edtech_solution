@@ -13,15 +13,19 @@ def display_recipe(data: dict) -> dict:
     return new_data
 
 
-def display_recipe_ingredients(string: str) -> list:
+def display_recipe_ingredients(string: str) -> dict:
     return recipes[string]
 
 
-items_to_be_bought = {}
-def add_items(data:dict, food_item:str, qty: int) -> None:
-    data = {food_item: qty}
-add_items(items_to_be_bought,)
+def add_items(data:dict, item:str, qty: int) -> None:
+    # if item in data:
+    #     data[item] += qty
+    # else:
+    #     data[item] = qty
+    data[item] = data.setdefault(item, 0) + qty
 
+
+items_to_be_bought = {}
 choice = None
 while choice != "0":
     print("Please choose your recipe")
@@ -31,6 +35,7 @@ while choice != "0":
     for index, value in data.items():
         print(f"{index} - {value}")
     choice = input("> ")
+
     if choice in data:
         item_selected = data[choice]
         print(f"You have selected: {item_selected}")
@@ -46,6 +51,6 @@ while choice != "0":
                 needed_quantity = required_qty - quantity_in_pantry
                 add_items(items_to_be_bought, food_item, needed_quantity)
                 print(f"You need to buy {needed_quantity} of {food_item}")
-        print(items_to_be_bought)
+    print(items_to_be_bought)
 
 
