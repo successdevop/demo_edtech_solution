@@ -1,5 +1,7 @@
 from content import pantry, recipes
-#
+from recipe_options import recipes_tuple
+
+# print(recipes_tuple)
 # print(pantry)
 # print(recipes)
 
@@ -11,12 +13,14 @@ def display_recipe(data: dict) -> dict:
     return new_data
 
 
-def display_recipe_ingredients(string: str) -> None:
-    for key, value in enumerate(recipes[string]):
-        print(f"{key+1} - {value}")
+def display_recipe_ingredients(string: str) -> list:
+    return recipes[string]
 
-# display_recipe_ingredients("Pizza")
 
+items_to_be_bought = {}
+def add_items(data:dict, food_item:str, qty: int) -> None:
+    data = {food_item: qty}
+add_items(items_to_be_bought,)
 
 choice = None
 while choice != "0":
@@ -30,6 +34,18 @@ while choice != "0":
     if choice in data:
         item_selected = data[choice]
         print(f"You have selected: {item_selected}")
+        ingredients_list = display_recipe_ingredients(item_selected)
+        print(f"These are the ingredients of {item_selected}: {ingredients_list}")
         print()
-        print(f"These are the ingredients of {item_selected}")
-        display_recipe_ingredients(item_selected)
+        # checking if our ingredients is available in our pantry list
+        for food_item, required_qty in ingredients_list.items():
+            quantity_in_pantry = pantry.get(food_item, 0)
+            if required_qty <= quantity_in_pantry:
+                print(f"{food_item} - \tavailable and enough")
+            else:
+                needed_quantity = required_qty - quantity_in_pantry
+                add_items(items_to_be_bought, food_item, needed_quantity)
+                print(f"You need to buy {needed_quantity} of {food_item}")
+        print(items_to_be_bought)
+
+
