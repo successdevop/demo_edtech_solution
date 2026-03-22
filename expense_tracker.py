@@ -1,12 +1,40 @@
 expenses = []
 
 
-def add_expenses() -> None:
-    print("Please enter your expenses---(amount of expense, category of expense, and the description")
+def validate_amount(amount: str) -> int:
     while True:
-        amount = int(input("Enter the amount: "))
+        if not amount.isnumeric():
+            print("Please enter a valid number as amount")
+            amount = input("> ")
+        else:
+            break
+
+    return int(amount)
+
+
+def validate_string(string: str) -> str:
+    while True:
+        if not string.isalnum():
+            print("Please enter a valid information")
+            string = input("> ")
+        else:
+            break
+
+    return string
+
+
+def add_expenses() -> None:
+    print("Please enter your expenses---(amount of expense, category of expense, and the description of expense)")
+    while True:
+        amount = input("Enter the amount: ")
+        amount = validate_amount(amount)
+
         category = input("Enter the category: ")
+        category = validate_string(category)
+
         desc = input("Enter the description: ")
+        desc = validate_string(desc)
+
         data = {"amount": amount, "category": category, "desc": desc}
         expenses.append(data)
         print("Expenses added")
@@ -52,13 +80,24 @@ def category_summary(data: list) -> None:
         # result["category"] = result.setdefault("category", 0) + categories["amount"]
     print(result)
 
+
+def highest_expense(data: list) -> None:
+    output = 0
+    transaction = {}
+    for h_expense in reversed(data):
+        if h_expense["amount"] > output:
+            output = h_expense["amount"]
+            transaction = h_expense
+    print(transaction)
+
+
     # for key, value in result.items():
     #     print(f"{key}: {value}")
-
 
 
 add_expenses()
 # view_expense(expenses)
 # total_spending(expenses)
 # filter_expenses_by_category(expenses)
-category_summary(expenses)
+# category_summary(expenses)
+# highest_expense(expenses)
