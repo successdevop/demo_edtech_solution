@@ -1,4 +1,12 @@
-expenses = []
+expenses = [
+    {"amount": 2000, "category": "food", "desc": "lunch"},
+    {"amount": 5000, "category": "transport", "desc": "uber"},
+    {"amount": 3000, "category": "bills", "desc": "data subscription"},
+    {"amount": 7000, "category": "food", "desc": "party"},
+    {"amount": 9000, "category": "food", "desc": "kitchen stock up"},
+    {"amount": 400, "category": "transport", "desc": "church service"},
+    {"amount": 1000, "category": "bills", "desc": "electricity"},
+]
 
 
 def validate_amount(amount: str) -> int:
@@ -67,18 +75,22 @@ def filter_expenses_by_category(data: list) -> None:
     for dataset in data:
         if dataset["category"] == category:
             print(dataset)
+        print("No such category")
+
 
 
 def category_summary(data: list) -> None:
     result = {}
     for categories in data:
-        if categories["category"] in result:
-            result["category"] += categories["amount"]
-        else:
-            result["category"] = categories["amount"]
+        category = categories["category"]
+        # if category in result:
+        #     result[category] += categories["amount"]
+        # else:
+        #     result[category] = categories["amount"]
+        result[category] = result.setdefault(category, 0) + categories["amount"]
 
-        # result["category"] = result.setdefault("category", 0) + categories["amount"]
-    print(result)
+    for key, value in result.items():
+        print(f"{key.capitalize()}: #{value}")
 
 
 def highest_expense(data: list) -> None:
@@ -91,13 +103,54 @@ def highest_expense(data: list) -> None:
     print(transaction)
 
 
-    # for key, value in result.items():
-    #     print(f"{key}: {value}")
-
-
-add_expenses()
+# add_expenses()
+# print("*+"*5+"View Expenses"+"*+"*5)
 # view_expense(expenses)
+# print("*+"*5+"Total Expenses"+"*+"*5)
 # total_spending(expenses)
+# print("*+"*5+"Expense by Category"+"*+"*5)
 # filter_expenses_by_category(expenses)
+# print("*+"*5+"Category Expense Summary"+"*+"*5)
 # category_summary(expenses)
+# print("*+"*5+"Highest Expense Transaction"+"*+"*5)
 # highest_expense(expenses)
+
+def main():
+    while True:
+        options = "1234560"
+        print("Welcome to your expense tracker, choose your option")
+        print("1. Add expenses")
+        print("2. View expenses")
+        print("3. View expenses by category")
+        print("4. View expense summary")
+        print("5. View highest expense transaction")
+        print("6. Total expenses")
+        print("0. Exit")
+
+        choice = input(": ")
+        if choice not in options:
+            print("Please enter a valid option")
+        else:
+            if choice == "1":
+                add_expenses()
+                print()
+            elif choice == "2":
+                view_expense(expenses)
+                print()
+            elif choice == "3":
+                filter_expenses_by_category(expenses)
+                print()
+            elif choice == "4":
+                category_summary(expenses)
+                print()
+            elif choice == "5":
+                highest_expense(expenses)
+                print()
+            elif choice == "6":
+                total_spending(expenses)
+                print()
+            elif choice == "0":
+                break
+
+
+main()
