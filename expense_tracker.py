@@ -9,11 +9,11 @@ expenses = [
 ]
 
 
-def validate_amount() -> int:
+def validate_amount() -> float:
     while True:
         amount = input("Enter amount: ")
         try:
-            return int(amount)
+            return float(amount)
         except ValueError:
             print("Please enter a valid number")
 
@@ -45,17 +45,18 @@ def add_expenses() -> None:
 
 def view_expense(data: list) -> None:
     if len(data) == 0:
-        print(f"No expenses: {data}")
+        print(f"No expenses found: {data}")
 
-    for index, expense_data in enumerate(data):
-        print(f"{index+1}. {expense_data["category"].capitalize()} - #{expense_data["amount"]} - {expense_data["desc"]}")
+    for index, expense_data in enumerate(data, 1):
+        print(f"{index}. {expense_data["category"].capitalize()} - #{expense_data["amount"]} - {expense_data["desc"]}")
 
 
 def total_spending(data: list) -> None:
-    output = 0
-    for expense_data in data:
-        output += expense_data["amount"]
-    print(f"Total: #{output}")
+    # output = 0
+    # for expense_data in data:
+    #     output += expense_data["amount"]
+    # print(f"Total: #{output}")
+    print(f"{sum(e["amount"] for e in data)}")
 
 
 def filter_expenses_by_category(data: list) -> None:
@@ -63,8 +64,8 @@ def filter_expenses_by_category(data: list) -> None:
     for dataset in data:
         if dataset["category"] == category:
             print(dataset)
-        print("No such category")
 
+    print("No such category")
 
 
 def category_summary(data: list) -> None:
