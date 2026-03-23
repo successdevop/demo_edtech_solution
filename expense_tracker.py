@@ -85,7 +85,7 @@ def category_summary(data: list) -> None:
 def highest_expense(data: list) -> None:
     output = 0
     transaction = {}
-    for h_expense in reversed(data):
+    for h_expense in data:
         if h_expense["amount"] > output:
             output = h_expense["amount"]
             transaction = h_expense
@@ -106,7 +106,6 @@ def highest_expense(data: list) -> None:
 
 def main():
     while True:
-        options = "1234560"
         print("Welcome to your expense tracker, choose your option")
         print("1. Add expenses")
         print("2. View expenses")
@@ -116,30 +115,29 @@ def main():
         print("6. Total expenses")
         print("0. Exit")
 
-        choice = input(": ")
-        if choice not in options:
-            print("Please enter a valid option")
-        else:
-            if choice == "1":
-                add_expenses()
-                print()
-            elif choice == "2":
-                view_expense(expenses)
-                print()
-            elif choice == "3":
-                filter_expenses_by_category(expenses)
-                print()
-            elif choice == "4":
-                category_summary(expenses)
-                print()
-            elif choice == "5":
-                highest_expense(expenses)
-                print()
-            elif choice == "6":
-                total_spending(expenses)
-                print()
-            elif choice == "0":
-                break
+        choice = input("> ")
+        if choice == "1":
+            add_expenses()
+            print()
+        elif choice == "2":
+            view_expense(expenses)
+            print()
+        elif choice == "3":
+            filter_expenses_by_category(expenses)
+            print()
+        elif choice == "4":
+            category_summary(expenses)
+            print()
+        elif choice == "5":
+            highest_expense(expenses)
+            print()
+        elif choice == "6":
+            total_spending(expenses)
+            print()
+        elif choice == "0":
+            break
+        # else:
+        #     print("Invalid choice number")
 
 
 main()
