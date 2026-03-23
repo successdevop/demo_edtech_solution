@@ -9,49 +9,37 @@ expenses = [
 ]
 
 
-def validate_amount(amount: str) -> int:
+def validate_amount() -> int:
     while True:
-        if not amount.isnumeric():
-            print("Please enter a valid number as amount")
-            amount = input("> ")
-        else:
-            break
-
-    return int(amount)
+        amount = input("Enter amount: ")
+        try:
+            return int(amount)
+        except ValueError:
+            print("Please enter a valid number")
 
 
 def validate_string(string: str) -> str:
     while True:
-        if not string.isalnum():
-            print("Please enter a valid information")
-            string = input("> ")
-        else:
-            break
-
-    return string
+        text = input(string).strip()
+        if text:
+            return text
+        print("Input cannot be empty")
 
 
 def add_expenses() -> None:
     print("Please enter your expenses---(amount of expense, category of expense, and the description of expense)")
     while True:
-        amount = input("Enter the amount: ")
-        amount = validate_amount(amount)
-
-        category = input("Enter the category: ")
-        category = validate_string(category)
-
-        desc = input("Enter the description: ")
-        desc = validate_string(desc)
+        amount = validate_amount()
+        category = validate_string("Enter the category: ")
+        desc = validate_string("Enter the description: ")
 
         data = {"amount": amount, "category": category, "desc": desc}
         expenses.append(data)
         print("Expenses added")
         print("*=*" * 25)
 
-        condition = input("Do you want to add another expenses? YES or NO\n>: ")
-        if condition == "YES".casefold():
-            print("Add another expense: ")
-        else:
+        condition = input("Add another expenses? (yes/no)\n>: ")
+        if condition != "yes".casefold():
             break
 
 
