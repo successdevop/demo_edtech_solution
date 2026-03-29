@@ -1,11 +1,24 @@
 import csv
 filename = "country_info.txt"
+countries = {}
 
 with open(filename, encoding='utf-8', newline='') as country_data:
-    countries = csv.DictReader(country_data, delimiter='|')
+    dict_reader = csv.DictReader(country_data, delimiter='|')
 
-    for country in countries:
-        print(country)
+    for country in dict_reader:
+        countries[country['Country'].casefold()] = country
+
+
+print(countries)
+
+
+
+
+
+
+
+
+
 
 # countries = {}
 #
@@ -49,14 +62,14 @@ with open(filename, encoding='utf-8', newline='') as country_data:
     #     for missing_v in countries[country_no_capital]:
     #         if
 
-# print("==" * 5 + " Capital city challenge " + "==" * 5)
-# user_country = input("Enter a country: ").casefold()
-# if user_country in countries:
-#     print(f"{'The capital of ' + user_country.capitalize() + 'is => ' + countries[user_country]['capital'] if
-#     countries[user_country]['capital'] else user_country.capitalize() + ' does not have a capital'}")
-#     # print(f"The capital of {user_country.capitalize()} is => {countries[user_country]['capital']}")
-# else:
-#     print("Country not found")
+print("==" * 5 + " Capital city challenge " + "==" * 5)
+user_country = input("Enter a country: ").casefold()
+if user_country in countries:
+    print(f"{'The capital of ' + user_country.capitalize() + 'is => ' + countries[user_country]['capital'] if
+    countries[user_country]['capital'] else user_country.capitalize() + ' does not have a capital'}")
+    # print(f"The capital of {user_country.capitalize()} is => {countries[user_country]['capital']}")
+else:
+    print("Country not found")
 
 # for cty, cty_detail in countries.items():
 #     if cty.casefold() == user_country.casefold():
