@@ -22,9 +22,10 @@ output_filename = 'my_cereals.csv'
 with open(output_filename, 'w', encoding='utf-8', newline='') as csv_file:
     writer = csv.writer(csv_file, quoting=csv.QUOTE_NONNUMERIC)
     writer.writerow(column_headings)
+    writer.writerows(cereals)
 
-    for items in cereals:
-        writer.writerow(items)
-
-    print(writer)
+    # for items in cereals:
+    #     writer.writerow(items)
+    #
+    # print(writer)
 

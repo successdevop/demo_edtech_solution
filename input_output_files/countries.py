@@ -1,35 +1,42 @@
+import csv
 filename = "country_info.txt"
 
-countries = {}
+with open(filename, encoding='utf-8', newline='') as country_data:
+    countries = csv.DictReader(country_data, delimiter='|')
 
-with open(filename) as info:
-    info.readline()
-    for rows in info:
-        data = rows.strip().split("|")
-        country, capital, cc, cc3, iac, timezone, currency = data
-        country_dict = {
-            "name": country,
-            "capital": capital,
-            "country_code": cc,
-            "cc3": cc3,
-            "dialing_code": iac,
-            "timezone": timezone,
-            "currency": currency
-        }
+    for country in countries:
+        print(country)
 
-        countries[country.casefold()] = country_dict
-
-print(countries)
-
-missing_values_box = []
-for country_w_m_v in countries:
-    each_country = countries[country_w_m_v]
-    for key, missing_values in each_country.items():
-        if missing_values == "":
-            missing_values_box.append(key)
-    print(f"{each_country['name']} has these missing values: {', '.join(key for key in missing_values_box)}")
-    print()
-    missing_values_box.clear()
+# countries = {}
+#
+# with open(filename) as info:
+#     info.readline()
+#     for rows in info:
+#         data = rows.strip().split("|")
+#         country, capital, cc, cc3, iac, timezone, currency = data
+#         country_dict = {
+#             "name": country,
+#             "capital": capital,
+#             "country_code": cc,
+#             "cc3": cc3,
+#             "dialing_code": iac,
+#             "timezone": timezone,
+#             "currency": currency
+#         }
+#
+#         countries[country.casefold()] = country_dict
+#
+# print(countries)
+#
+# missing_values_box = []
+# for country_w_m_v in countries:
+#     each_country = countries[country_w_m_v]
+#     for key, missing_values in each_country.items():
+#         if missing_values == "":
+#             missing_values_box.append(key)
+#     print(f"{each_country['name']} has these missing values: {', '.join(key for key in missing_values_box)}")
+#     print()
+#     missing_values_box.clear()
 
 
 # for country_no_capital in countries:
