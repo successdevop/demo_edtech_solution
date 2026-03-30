@@ -46,7 +46,6 @@ def next_invoice_number(invoice_number: str) -> str:
     return new_invoice_number
 
 
-
 def record_invoice(invoice_file: TextIO,
                    company: str,
                    amount: float) -> None:
