@@ -16,6 +16,8 @@ def encircle_square(lenght: int) -> None:
     radius = lenght * cos(angle)
     turtle.right(135)
     turtle.circle(radius)
+    print(f"Namespace of this function are: {dir()}")
+    print(f"Locals: {locals()}")
 
 
 def square(length: int) -> None:
@@ -24,9 +26,13 @@ def square(length: int) -> None:
         turtle.right(90)
 
 
-turtle.speed("fast")
-for _ in range(72):
-    encircle_square(120)
-    turtle.left(5)
+# turtle.speed("fast")
+# for _ in range(72):
+#     encircle_square(120)
+#     turtle.left(5)
 # encircle_square(300)
-turtle.done()
+# turtle.done()
+print(dir())
+g = globals()
+print(g['square'])
+print(dir(__builtins__))
