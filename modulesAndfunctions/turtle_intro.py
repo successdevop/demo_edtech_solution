@@ -5,14 +5,15 @@
 # turtle.forward(100)
 # turtle.right(90)
 # turtle.done()
-import math
+# import math
 import turtle
+from math import radians, cos
 
 
 def encircle_square(lenght: int) -> None:
     square(lenght)
-    angle = math.radians(45)
-    radius = lenght * math.cos(angle)
+    angle = radians(45)
+    radius = lenght * cos(angle)
     turtle.right(135)
     turtle.circle(radius)
 
@@ -23,8 +24,9 @@ def square(length: int) -> None:
         turtle.right(90)
 
 
-# for _ in range(72):
-#     square(120)
-#     turtle.left(5)
-encircle_square(300)
+turtle.speed("fast")
+for _ in range(72):
+    encircle_square(120)
+    turtle.left(5)
+# encircle_square(300)
 turtle.done()
