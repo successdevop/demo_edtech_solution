@@ -17,6 +17,6 @@ print("year: {}, month: {}, day: {}".format(year, month, day))
 
 today = datetime.date.today()
 print(today)
-print(today.strftime('%b'))
+print(today.strftime('%d'))
 print(today.weekday())
 
