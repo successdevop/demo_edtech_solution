@@ -5,18 +5,21 @@ class Dog:
         self.name = name
         self.age = age
 
-    def description(self):
-        print(f"{self.name} is {self.age} years old")
+    def __str__(self):
+        return f"{self.name} is {self.age} years old"
 
-    def sound(self, sound):
+    def sound(self, sound: str):
         print(f"{self.name} says {sound}")
 
 
 bingo = Dog("Bingo", 4)
-puppy = Dog("Puppy", 6)
-
+bingo.sound("'wooooo'")
 print(bingo)
-print(puppy)
-print(bingo == puppy)
 
-
+puppy = Dog("Puppy", 6)
+#
+# print(bingo)
+# print(puppy)
+# print(bingo == puppy)
+#
+#
