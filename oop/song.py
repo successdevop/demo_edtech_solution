@@ -12,4 +12,5 @@ class Song:
         self.duration = duration
         self.album = []
 
-help(Song.__init__)
+# help(Song.__init__)
+print(Song.__doc__)
