@@ -12,7 +12,10 @@ class Car:
 red_car = Car("red", 30_000)
 blue_car = Car("blue", 20_000)
 
-print(blue_car)
-print(red_car)
+for car in [red_car, blue_car]:
+    print(car)
+#
+# print(blue_car)
+# print(red_car)
 
 
