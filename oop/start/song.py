@@ -15,7 +15,7 @@ class Song:
 
 class Album:
     """
-    Class to represent an album, using it's track list
+    Class to represent an album, using its track list
     Attributes:
         name (str): The name of the album
         year (int): The year album was released
@@ -38,7 +38,7 @@ class Album:
 
     def add_song(self, song: Song, position: int = None):
         if position is None:
-            self.tracks.append(Song)
+            self.tracks.append(song)
         else:
             self.tracks.insert(position, song)
 
@@ -54,11 +54,17 @@ class Artist:
         self.albums.append(album)
 
 
+def find_object(field, object_list):
+    for item in object_list:
+        if item.name == field:
+            return item
+    return None
+
+
 def load_data():
     artist = None
     album = None
     artist_list = []
-    songs = None
 
     with open("albums.txt", mode="r", encoding="utf-8") as file_reader:
         for line in file_reader:
@@ -68,27 +74,25 @@ def load_data():
 
             if artist is None:
                 artist = Artist(artist_field)
-            elif artist.name != artist_field:
-                artist.add_album(album)
                 artist_list.append(artist)
-                artist = Artist(artist_field)
+            elif artist.name != artist_field:
+                artist = find_object(artist_field, artist_list)
+                if artist is None:
+                    artist = Artist(artist_field)
+                    artist_list.append(artist)
                 album = None
 
             if album is None:
                 album = Album(album_field, year, artist)
+                artist.add_album(album)
             elif album.name != album_field:
-                artist.add_album(album)
-                album = Album(album_field, year, artist)
+                album = find_object(album_field, artist.albums)
+                if album is None:
+                    album = Album(album_field, year, artist)
+                    artist.add_album(album)
 
-            if songs is None:
-                songs = Song(song, artist_field)
-            else:
-                album.add_song(song)
-
-        if artist is not None:
-            if album is not None:
-                artist.add_album(album)
-            artist_list.append(artist)
+            songs = Song(song, artist_field)
+            album.add_song(songs)
         print()
 
     return artist_list
@@ -106,11 +110,4 @@ if __name__ == "__main__":
     artists = load_data()
     print(f"There are {len(artists)} artist in the list")
 
-    # for artist in artists:
-    #     for album in artist.albums:
-    #         print(f"{album.tracks[0].}")
-            # for song in album.tracks:
-            #     print(f"{song.}")
-
     check_file(artists)
-
