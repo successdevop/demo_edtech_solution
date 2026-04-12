@@ -6,7 +6,6 @@ class Song:
         artist (Artist): An artist object representing the song creator
         duration (int): The duration of the song in seconds. May be zero
     """
-
     def __init__(self, title: str, artist: str, duration: int = 0):
         self.title = title
         self.artist = artist
@@ -26,7 +25,6 @@ class Album:
     Methods:
         add_song: Used to add a song to the album track list
     """
-
     def __init__(self, album_name: str, year: int, artist=None):
         self.name = album_name
         self.year = year
@@ -45,13 +43,22 @@ class Album:
 
 class Artist:
     """Base class to store artist details"""
-
     def __init__(self, name):
         self.name = name
         self.albums = []
 
     def add_album(self, album):
         self.albums.append(album)
+
+    def add_song(self, album_field, year, song):
+        obj = find_object(album_field, self.albums)
+        if obj is None:
+            print(f"{album_field} not found")
+            album = Album(album_field, year, song)
+            self.add_album(album)
+        else:
+            print(f"{album_field} found")
+        album.add_song(song)
 
 
 def find_object(field, object_list):
@@ -62,8 +69,6 @@ def find_object(field, object_list):
 
 
 def load_data():
-    artist = None
-    album = None
     artist_list = []
 
     with open("albums.txt", mode="r", encoding="utf-8") as file_reader:
@@ -71,29 +76,12 @@ def load_data():
             artist_field, album_field, year, song = line.strip("\n").split("\t")
             year = int(year)
             # print(artist_field, album_field, year, song)
+            new_artist = find_object(artist_field, artist_list)
+            if new_artist is None:
+                new_artist = Artist(artist_field)
+                artist_list.append(new_artist)
 
-            if artist is None:
-                artist = Artist(artist_field)
-                artist_list.append(artist)
-            elif artist.name != artist_field:
-                artist = find_object(artist_field, artist_list)
-                if artist is None:
-                    artist = Artist(artist_field)
-                    artist_list.append(artist)
-                album = None
-
-            if album is None:
-                album = Album(album_field, year, artist)
-                artist.add_album(album)
-            elif album.name != album_field:
-                album = find_object(album_field, artist.albums)
-                if album is None:
-                    album = Album(album_field, year, artist)
-                    artist.add_album(album)
-
-            songs = Song(song, artist_field)
-            album.add_song(songs)
-        print()
+            new_artist.add_song(album_field, year, song)
 
     return artist_list
 
