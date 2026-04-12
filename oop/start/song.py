@@ -7,7 +7,7 @@ class Song:
         duration (int): The duration of the song in seconds. May be zero
     """
     def __init__(self, title: str, artist: str, duration: int = 0):
-        self.title = title
+        self.name = title
         self.artist = artist
         self.duration = duration
 
@@ -34,11 +34,14 @@ class Album:
             self.artist = artist
         self.tracks = []
 
-    def add_song(self, song: Song, position: int = None):
-        if position is None:
-            self.tracks.append(song)
-        else:
-            self.tracks.insert(position, song)
+    def add_song(self, song, position: int = None):
+        found_song = find_object(song, self.tracks)
+        if found_song is None:
+            found_song = Song(song, self.artist)
+            if position is None:
+                self.tracks.append(found_song)
+            else:
+                self.tracks.insert(position, found_song)
 
 
 class Artist:
@@ -54,11 +57,11 @@ class Artist:
         obj = find_object(album_field, self.albums)
         if obj is None:
             print(f"{album_field} not found")
-            album = Album(album_field, year, song)
-            self.add_album(album)
+            obj = Album(album_field, year, song)
+            self.add_album(obj)
         else:
             print(f"{album_field} found")
-        album.add_song(song)
+        obj.add_song(song)
 
 
 def find_object(field, object_list):
@@ -91,7 +94,7 @@ def check_file(artists_list):
         for artis in artists_list:
             for albums in artis.albums:
                 for songs in albums.tracks:
-                    print(f"{artis.name}\t{albums.name}\t{albums.year}\t{songs.title}", file=file_checker)
+                    print(f"{artis.name}\t{albums.name}\t{albums.year}\t{songs.name}", file=file_checker)
 
 
 if __name__ == "__main__":
