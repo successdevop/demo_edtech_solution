@@ -1,15 +1,15 @@
 from player import Player
+from enemy import Enemy
 
 tim = Player("Tim")
 print(tim)
 
-print(tim.level)
-tim.level = 2
-print(tim)
+enemy_1 = Enemy("Basic enemy", 12, 1)
+enemy_1.take_damage(6)
+print(enemy_1)
 
-tim.level = 5
-print(tim)
+enemy_1.take_damage(3)
+print(enemy_1)
 
-print(tim.score)
-tim.score = 300
-print(tim.score)
+enemy_1.take_damage(4)
+print(enemy_1)
