@@ -14,3 +14,11 @@ class Enemy:
 
     def __str__(self):
         return "Name: {0.name}, Hit_Points: {0.hit_points}, Lives: {0.lives}".format(self)
+
+
+class Troll(Enemy):
+    def __init__(self, name):
+        super().__init__(name=name, hit_points=23, lives=1)
+
+    def grunt(self):
+        print("Me {0.name}. {0.name} stomp you".format(self))
