@@ -29,7 +29,7 @@ class Album:
         self.name = album_name
         self.year = year
         if artist is None:
-            self.artist = Artist("Various Artist")
+            self.artist = "Various Artist"
         else:
             self.artist = artist
         self.tracks = []
@@ -57,7 +57,7 @@ class Artist:
         obj = find_object(album_field, self.albums)
         if obj is None:
             print(f"{album_field} not found")
-            obj = Album(album_field, year, song)
+            obj = Album(album_field, year, self.name)
             self.add_album(obj)
         else:
             print(f"{album_field} found")
