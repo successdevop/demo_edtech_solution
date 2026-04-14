@@ -66,7 +66,7 @@ class Artist:
 
 def find_object(field, object_list):
     for item in object_list:
-        if item.name == field:
+        if item._name == field:
             return item
     return None
 
@@ -94,7 +94,7 @@ def check_file(artists_list):
         for artis in artists_list:
             for albums in artis.albums:
                 for songs in albums.tracks:
-                    print(f"{artis.name}\t{albums.name}\t{albums.year}\t{songs.name}", file=file_checker)
+                    print(f"{artis._name}\t{albums._name}\t{albums.year}\t{songs._name}", file=file_checker)
 
 
 if __name__ == "__main__":
